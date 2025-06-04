@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizualizace řazení</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="column.js" defer></script>
+    <script src="sortAnimation.js" defer></script>
+    <script src="bubbleSortAnimation.js" defer></script>
+    <script src="selectionSortAnimation.js" defer></script>
+    <script src="insertionSortAnimation.js" defer></script>
+    <script src="shellSortAnimation.js" defer></script>
+    <script src="quickSortAnimation.js" defer></script>
+    <script src="mergeSortAnimation.js" defer></script>
+    <script src="heapSortAnimation.js" defer></script>
+    <script src="pigeonHoleSortAnimation.js" defer></script>
+    <script src="countingSortAnimation.js" defer></script>
+    <script src="radixSortAnimation.js" defer></script>
+
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1> Řadící algoritmy <br> (Národní Obrození Edition)</h1>
+    <h2>O(n²)</h2>
+
+    <h3 style="text-align: center;">Bublinkové řazení</h3>
+    <div class="sort_container" id="bubblesort_container"></div>
+    <input type="button" value="Start" onclick="bubbleSortAnimation.sort()">
+    <p style="text-align: center;">
+        Jednoduchý, ale neefektivní algoritmus, který opakovaně prochází seznam a vyměňuje sousední prvky, pokud jsou ve špatném pořadí.<br>
+        <strong>Časová složitost:</strong> Nejhorší: O(n²), Průměrná: O(n²), Nejlepší: O(n)<br>
+        <strong>Stabilní:</strong> Ano<br>
+        <strong>Paměť:</strong> O(1)
+    </p>
+
+    <h3 style="text-align: center;">Vybíravé řazení</h3>
+    <div class="sort_container" id="selectionsort_container"></div>
+    <input type="button" value="Start" onclick="selectionSortAnimation.sort()">
+    <p style="text-align: center;">
+        Algoritmus vybírá nejmenší prvek z neprocházené části a umístí ho na správné místo.<br>
+        <strong>Časová složitost:</strong> Nejhorší: O(n²), Průměrná: O(n²), Nejlepší: O(n²)<br>
+        <strong>Stabilní:</strong> Ne<br>
+        <strong>Paměť:</strong> O(1)
+    </p>
+
+    <h3 style="text-align: center;">Vkládací řazení</h3>
+    <div class="sort_container" id="insertionsort_container"></div>
+    <input type="button" value="Start" onclick="insertionSortAnimation.sort()">
+    <p style="text-align: center;">
+    Prvky se vkládají na správné místo v již seřazené části pole – podobně jako třídění karet v ruce.<br>
+        <strong>Časová složitost:</strong> Nejhorší: O(n²), Průměrná: O(n²), Nejlepší: O(n)<br>
+        <strong>Stabilní:</strong> Ano<br>
+        <strong>Paměť:</strong> O(1)
+    </p>
+
+    <h2>O(nlogn)</h2>
+
+    <h3 style="text-align: center;">Řazení mušlí</h3>
+    <div class="sort_container" id="shellsort_container"></div>
+    <input type="button" value="Start" onclick="shellSortAnimation.sort()">
+    <p style="text-align: center;">
+        Efektivnější varianta vkládacího řazení, která začíná porovnáním vzdálenějších prvků.<br>
+        <strong>Časová složitost:</strong> Nejhorší: O(n²), Průměrná: O(n<sup>3/2</sup>), Nejlepší: O(n log n)<br>
+        <strong>Stabilní:</strong> Ne<br>
+        <strong>Paměť:</strong> O(1)
+    </p>
+
+    <h3 style="text-align: center;">Zbrklé řazení</h3>
+    <div class="sort_container" id="quicksort_container"></div>
+    <input type="button" value="Start" onclick="quickSortAnimation.sort()">
+    <p style="text-align: center;">
+        Rozdělí pole na části menší/větší než pivot a rekurzivně je třídí.<br>
+        <strong>Časová složitost:</strong> Nejhorší: O(n²), Průměrná: O(n log n), Nejlepší: O(n log n)<br>
+        <strong>Stabilní:</strong> Ne<br>
+        <strong>Paměť:</strong> O(log n)
+    </p>
+
+    <h3 style="text-align: center;">Řazení děličem a osídlovačem (iterativní (Bottom-Up))</h3>
+    <div class="sort_container" id="mergesort_container"></div>
+    <input type="button" value="Start" onclick="mergeSortAnimation.sort()">
+    <p style="text-align: center;">
+        Rozděluje pole na poloviny, každou seřadí a spojí do jedné seřazené.<br>
+        <strong>Časová složitost:</strong> Nejhorší, Průměrná, Nejlepší: O(n log n)<br>
+        <strong>Stabilní:</strong> Ano<br>
+        <strong>Paměť:</strong> O(n)
+    </p>
+
+    <h3 style="text-align: center;">Hromadné řazení</h3>
+    <div class="sort_container" id="heapsort_container"></div>
+    <input type="button" value="Start" onclick="heapSortAnimation.sort()">
+    <p style="text-align: center;">
+        Využívá binární haldu ke konstrukci seřazeného pole.<br>
+        <strong>Časová složitost:</strong> Nejhorší, Průměrná, Nejlepší: O(n log n)<br>
+        <strong>Stabilní:</strong> Ne<br>
+        <strong>Paměť:</strong> O(1)
+    </p>
+
+    <h3 style="text-align: center;">Systém řízeného zasouvání holubů do svých dírek</h3>
+    <div class="sort_container" id="pigeonholesort_container"></div>
+    <input type="button" value="Start" onclick="pigeonHoleSortAnimation.sort()">
+    <p style="text-align: center;">
+        Prvky se rozdělí do "dírek" podle hodnoty a pak se znovu seřadí.<br>
+        <strong>Časová složitost:</strong> Nejhorší, Průměrná, Nejlepší: O(n + k)<br>
+        <strong>Stabilní:</strong> Ano<br>
+        <strong>Paměť:</strong> O(n + k)
+    </p>
+
+    <h3 style="text-align: center;">Řazení výpočtem</h3>
+    <div class="sort_container" id="countingsort_container"></div>
+    <input type="button" value="Start" onclick="countingSortAnimation.sort()">
+    <p style="text-align: center;">
+        Spočítá výskyt každé hodnoty a následně podle počtů vytvoří seřazený výstup.<br>
+        <strong>Časová složitost:</strong> Nejhorší, Průměrná, Nejlepší: O(n + k)<br>
+        <strong>Stabilní:</strong> Ano<br>
+        <strong>Paměť:</strong> O(n + k)
+    </p>
+
+    <h3 style="text-align: center;">Řazení základem číselné soustavy</h3>
+    <div class="sort_container" id="radixsort_container"></div>
+    <input type="button" value="Start" onclick="radixSortAnimation.sort()">
+    <p style="text-align: center;">
+        Třídí čísla podle číslic od nejméně významné po nejvýznamnější (pomocí stabilního algoritmu, např. Counting Sort).<br>
+        <strong>Časová složitost:</strong> Nejhorší, Průměrná, Nejlepší: O(nk)<br>
+        <strong>Stabilní:</strong> Ano<br>
+        <strong>Paměť:</strong> O(n + k)
+    </p>
+
+    <h3 style="text-align: center;">Porovnání algoritmů</h3>
+    <div class="compare_containers">
+        <div class="compare_container">
+            <select onchange="setupFirstSort(this.value)">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="shell">Shell Sort</option>
+                <option value="quick">Quick Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="heap">Heap Sort</option>
+                <option value="pigeonhole">Pigeonhole Sort</option>
+                <option value="counting">Counting Sort</option>
+                <option value="radix">Radix Sort</option>
+            </select>
+            <div class="sort_container" id="first_sort_container"></div>
+        </div>
+        <div class="compare_container">
+            <select onchange="setupSecondSort(this.value)">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="shell">Shell Sort</option>
+                <option value="quick">Quick Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="heap">Heap Sort</option>
+                <option value="pigeonhole">Pigeonhole Sort</option>
+                <option value="counting">Counting Sort</option>
+                <option value="radix">Radix Sort</option>
+            </select>
+            <div class="sort_container" id="second_sort_container"></div>
+        </div>
+    </div>
+    <input type="button" value="Start" onclick="startComparison()">
+    <input type="button" value="Stop" onclick="stopComparison()">
+    <input type="button" value="Reset" onclick="resetComparison()">
+
+    <div id="settings">
+        <label for="numElements">Počet prvků:</label>
+        <input type="number" id="numElements" value="0" min="5" max="100" step="5" oninput="this.value = Math.max(this.value, 5); updateSettings();">
+    
+        <label for="speed">
+            Rychlost:
+            <input type="range" id="speed" value="100" min="50" max="500" step="1" oninput="updateSpeedDisplay(this.value)">
+            <span id="speedDisplay">100</span> ms
+        </label>
+    </div>
+</body>
+</html>
+
